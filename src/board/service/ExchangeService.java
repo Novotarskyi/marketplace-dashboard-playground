@@ -66,14 +66,14 @@ public class ExchangeService {
 	private void processCancel(Map<BigDecimal, BoardRow> dataStore, Order order) {
 		BoardRow line = dataStore.get(order.getPrice());
 		line.quantity = line.quantity.subtract(order.getQuantity());
-		if (line.quantity.compareTo(BigDecimal.ZERO) == 0){
+		if (line.quantity.compareTo(BigDecimal.ZERO) == 0) {
 			dataStore.remove(line.price);
 		} else {
 			dataStore.put(line.price, line);
 		}
 	}
 
-	public BigDecimal currentSpread(){
+	public BigDecimal currentSpread() {
 		BigDecimal highestBuy = this.buysMap.firstKey();
 		if (highestBuy == null) highestBuy = BigDecimal.ZERO;
 		BigDecimal lowestSell = this.sellsMap.firstKey();

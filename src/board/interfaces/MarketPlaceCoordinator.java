@@ -40,7 +40,7 @@ public class MarketPlaceCoordinator {
 		this.exchangeService = new ExchangeService();
 	}
 
-	public int placeOrder(Long userId, BigDecimal quantity, BigDecimal price, TransactionType orderType){
+	public int placeOrder(Long userId, BigDecimal quantity, BigDecimal price, TransactionType orderType) {
 		Order placedOrder = orderManagementService.placeOrder(userId, quantity, price, orderType);
 		exchangeService.onOrderOperation(placedOrder, OperationType.SUBMIT);
 		return placedOrder.getId();

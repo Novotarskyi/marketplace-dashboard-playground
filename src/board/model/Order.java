@@ -25,7 +25,7 @@ public class Order{
 		this.userId = userId;
 	}
 
-	public BoardRow reduceToBoardRow(){
+	public BoardRow reduceToBoardRow() {
 		BoardRow boardRow = new BoardRow();
 		boardRow.price = this.price;
 		boardRow.quantity = this.quantity;
@@ -33,7 +33,7 @@ public class Order{
 		return boardRow;
 	}
 
-	public int getId(){
+	public int getId() {
 		return this.id;
 	}
 
@@ -58,7 +58,7 @@ public class Order{
 		return type;
 	}
 
-	public void deregister(){
+	public void deregister() {
 		this.active = false;
 	}
 
